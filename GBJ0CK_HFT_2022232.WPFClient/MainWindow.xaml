@@ -1,0 +1,87 @@
+﻿<Window SizeToContent="Height" x:Class="GBJ0CK_HFT_2022232.WPFClient.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GBJ0CK_HFT_2022232.WPFClient"
+        mc:Ignorable="d"
+        Title="DatabaseEditor" Height="568" Width="800">
+    <Window.DataContext>
+        <local:MainWindowViewModel/>
+    </Window.DataContext>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0">
+            <ListBox Height="148" ScrollViewer.VerticalScrollBarVisibility="Visible" ItemsSource="{Binding LolManagers}" SelectedItem="{Binding SelectedLolManager}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="{Binding Id}" ContentStringFormat="Id: {0}"></Label>
+                            <Label Content="{Binding Name}"></Label>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+
+            <ListBox Height="191" ScrollViewer.VerticalScrollBarVisibility="Visible" ItemsSource="{Binding LolTeams}" SelectedItem="{Binding SelectedLolTeam}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="{Binding Id}" ContentStringFormat="Id: {0}"></Label>
+                            <Label Content="{Binding Name}"></Label>
+                        </StackPanel>
+
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+
+            <ListBox Height="191" ScrollViewer.VerticalScrollBarVisibility="Visible" ItemsSource="{Binding LolPlayers}" SelectedItem="{Binding SelectedLolPlayer}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="{Binding Id}" ContentStringFormat="Id: {0}"></Label>
+                            <Label Content="{Binding Name}"></Label>
+                        </StackPanel>
+
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1" >
+            <Label Content="Name" Background="LightBlue"></Label>
+            <TextBox Text="{Binding SelectedLolManager.Name}"></TextBox>
+            <Label Content="Employees" Background="LightBlue"></Label>
+            <TextBox Text="{Binding SelectedLolManager.Employees}"></TextBox>
+            <Button Content="Create LolManager" Command="{Binding CreateLolManager}"></Button>
+            <Button Content="Update LolManager" Command="{Binding UpdateLolManager}"></Button>
+            <Button Content="Delete LolManager" Command="{Binding DeleteLolManager}"></Button>
+
+            <Label Content="Name" Background="LightBlue"></Label>
+            <TextBox Text="{Binding SelectedLolTeam.Name}"></TextBox>
+            <Label Content="Owner" Background="LightBlue"></Label>
+            <TextBox Text="{Binding SelectedLolTeam.Owner}"></TextBox>
+            <Label Content="LolManager Id" Background="LightBlue"></Label>
+            <TextBox Text="{Binding SelectedLolTeam.LolManager_Id}"></TextBox>
+            <Button Content="Create LolTeam" Command="{Binding CreateLolTeam}"></Button>
+            <Button Content="Update LolTeam" Command="{Binding UpdateLolTeam}"></Button>
+            <Button Content="Delete LolTeam" Command="{Binding DeleteLolTeam}"></Button>
+
+            <Label Content="Name" Background="LightBlue"></Label>
+            <TextBox Text="{Binding SelectedLolPlayer.Name}"></TextBox>
+            <Label Content="Age" Background="LightBlue"></Label>
+            <TextBox Text="{Binding SelectedLolPlayer.Age}"></TextBox>
+            <Label Content="LolTeam Id" Background="LightBlue"></Label>
+            <TextBox Text="{Binding SelectedLolPlayer.LolTeam_Id}"></TextBox>
+            <Button Content="Create LolPlayer" Command="{Binding CreateLolPlayer}"></Button>
+            <Button Content="Update LolPlayer" Command="{Binding UpdateLolPlayer}"></Button>
+            <Button Content="Delete LolPlayer" Command="{Binding DeleteLolPlayer}"></Button>
+
+
+        </StackPanel>
+
+    </Grid>
+</Window>
