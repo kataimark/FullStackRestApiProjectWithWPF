@@ -10,9 +10,12 @@
 	  <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.9"></PackageReference>
 	  <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="7.0.5"></PackageReference>
 	  <PackageReference Include="Microsoft.Toolkit.Mvvm" Version="7.1.2" />
+	  <PackageReference Include="Refit" Version="6.3.2" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\GBJ0CK_HFT_2021222.Client\GBJ0CK_HFT_2021222.Client.csproj" />
+    <ProjectReference Include="..\GBJ0CK_HFT_2021222.Endpoint\GBJ0CK_HFT_2021222.Endpoint.csproj" />
     <ProjectReference Include="..\GBJ0CK_HFT_2021222.Models\GBJ0CK_HFT_2021222.Models.csproj" />
   </ItemGroup>
 

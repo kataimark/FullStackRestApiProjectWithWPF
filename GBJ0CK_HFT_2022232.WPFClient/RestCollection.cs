@@ -6,7 +6,6 @@ using System.Collections.Specialized;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
-using System.Net.Http.Json;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -17,7 +16,7 @@ namespace GBJ0CK_HFT_2022232.WPFClient
     {
         HttpClient client;
 
-        public RestService(string baseurl, string pingableEndpoint = "/lolteam")
+        public RestService(string baseurl, string pingableEndpoint = "/lolplayer")
         {
             bool isOk = false;
             do

@@ -21,13 +21,13 @@ namespace GBJ0CK_HFT_2021222.EndPoint
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddTransient<ILolPlayerLogic, LolPlayerLogic>();
-            services.AddTransient<ILolTeamLogic, LolTeamLogic>();
-            services.AddTransient<ILolManagerLogic, LolManagerLogic>();
+            services.AddSingleton<ILolPlayerLogic, LolPlayerLogic>();
+            services.AddSingleton<ILolTeamLogic, LolTeamLogic>();
+            services.AddSingleton<ILolManagerLogic, LolManagerLogic>();
 
-            services.AddTransient<IRepository<LolPlayer>, LolPlayerRepository>();
-            services.AddTransient<IRepository<LolTeam>, LolTeamRepository>();
-            services.AddTransient<IRepository<LolManager>, LolManagerRepository>();
+            services.AddSingleton<IRepository<LolPlayer>, LolPlayerRepository>();
+            services.AddSingleton<IRepository<LolTeam>, LolTeamRepository>();
+            services.AddSingleton<IRepository<LolManager>, LolManagerRepository>();
 
             services.AddSingleton<DbContext, LolPlayerDbContext>();
             services.AddSignalR();
@@ -43,11 +43,11 @@ namespace GBJ0CK_HFT_2021222.EndPoint
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseCors(x => x
-                .AllowCredentials()
-                .AllowAnyMethod()
-                .AllowAnyHeader()
-                .WithOrigins("http://localhost:58709"));
+             app.UseCors(x => x
+            .AllowCredentials()
+            .AllowAnyMethod()
+            .AllowAnyHeader()
+            .WithOrigins("http://localhost:58709"));
 
             app.UseRouting();
 

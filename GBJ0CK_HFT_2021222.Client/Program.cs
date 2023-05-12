@@ -83,12 +83,10 @@ namespace GBJ0CK_HFT_2021222.Client
 
         private static void CreateLolPlayer()
         {
-            Console.WriteLine("Model: ");
+            Console.WriteLine("Name: ");
             string name = Console.ReadLine();
-            Console.WriteLine("Horsepower: ");
+            Console.WriteLine("Age: ");
             int age = int.Parse(Console.ReadLine());
-            Console.WriteLine("Price:");
-            int price = int.Parse(Console.ReadLine());
             Console.WriteLine("LolTeam id: ");
             int lolteamid = int.Parse(Console.ReadLine());
             rserv.Post<LolPlayer>(new LolPlayer() { Name = name, Age = age, LolTeam_Id = lolteamid }, "lolplayer");

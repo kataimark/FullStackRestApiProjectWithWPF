@@ -41,7 +41,6 @@ async function start() {
     }
 };
 
-
 fetch('http://localhost:21741/lolplayer')
     .then(x => x.json())
     .then(y => {
@@ -74,8 +73,6 @@ function display() {
     });
 }
 
-
-
 function create() {
     let name = document.getElementById('name').value;
     let age = document.getElementById('age').value;
@@ -94,7 +91,6 @@ function create() {
         })
         .catch((error) => { console.error('Error:', error); });
 }
-
 
 function remove(id) {
     fetch('http://localhost:21741/lolplayer/' + id, {
@@ -121,7 +117,7 @@ function update() {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json', },
         body: JSON.stringify(
-            { name: name, age: age, price: price, lolteam_Id: lolteamid, id:lolplayerIdToUpdate })
+            { name: name, age: age, price: price, lolteam_Id: lolteamid, id: lolplayerIdToUpdate })
     })
         .then(response => response)
         .then(data => {
@@ -139,4 +135,80 @@ function showupdate(id) {
     document.getElementById('lolteamidtoupdate').value = lolplayers.find(t => t['id'] == id)['lolteam_id'];
     document.getElementById('updateformdiv').style.display = 'flex';
     lolplayerIdToUpdate = id;
+}
+
+
+function displayQueryResult1() {
+    fetch('http://localhost:21741/stat/GetLolManagerWhereLolPlayer18')
+        .then(response => response.json())
+        .then(data => {
+            let result = document.getElementById('queryresult1');
+            result.innerHTML = ""; // clear existing content
+            data.forEach(item => {
+                result.innerHTML += "<p>" + JSON.stringify(item) + "</p>";
+            });
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+}
+
+function displayQueryResult2() {
+    fetch('http://localhost:21741/stat/GetLolManagerWhereLolPlayerModelIsZeus')
+        .then(response => response.json())
+        .then(data => {
+            let result = document.getElementById('queryresult2');
+            result.innerHTML = ""; // clear existing content
+            data.forEach(item => {
+                result.innerHTML += "<p>" + JSON.stringify(item) + "</p>";
+            });
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+}
+
+function displayQueryResult3() {
+    fetch('http://localhost:21741/stat/GetLolManagerWherePriceIs100')
+        .then(response => response.json())
+        .then(data => {
+            let result = document.getElementById('queryresult3');
+            result.innerHTML = ""; // clear existing content
+            data.forEach(item => {
+                result.innerHTML += "<p>" + JSON.stringify(item) + "</p>";
+            });
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+}
+
+function displayQueryResult4() {
+    fetch('http://localhost:21741/stat/GetLolPlayerWhereMoreThan28Employees')
+        .then(response => response.json())
+        .then(data => {
+            let result = document.getElementById('queryresult4');
+            result.innerHTML = ""; // clear existing content
+            data.forEach(item => {
+                result.innerHTML += "<p>" + JSON.stringify(item) + "</p>";
+            });
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+}
+
+function displayQueryResult5() {
+    fetch('http://localhost:21741/stat/GetLolPlayerWhereLolTeamOwnerIsBengi')
+        .then(response => response.json())
+        .then(data => {
+            let result = document.getElementById('queryresult5');
+            result.innerHTML = ""; // clear existing content
+            data.forEach(item => {
+                result.innerHTML += "<p>" + JSON.stringify(item) + "</p>";
+            });
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
 }

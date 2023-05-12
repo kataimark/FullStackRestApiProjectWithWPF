@@ -23,14 +23,14 @@ namespace GBJ0CK_HFT_2021222.Logic
 
         public void Create(LolPlayer obj)
         {
-            //if (obj.Name == "")
-            //{
-            //    throw new ArgumentNullException("Model can't be null");
-            //}
-            //if (obj.Price < 0 || obj.Age < 0)
-            //{
-            //    throw new ArgumentException("Negative price and horsepower is not allowed");
-            //}
+            if (obj.Name == "")
+            {
+                throw new ArgumentNullException("Model can't be null");
+            }
+            if (obj.Price < 0 || obj.Age < 0)
+            {
+                throw new ArgumentException("Negative price and horsepower is not allowed");
+            }
             LolPlayerRepo.Create(obj);
         }
 
@@ -41,10 +41,10 @@ namespace GBJ0CK_HFT_2021222.Logic
 
         public LolPlayer Read(int id)
         {
-            //if (id < LolPlayerRepo.ReadAll().Count() + 1)
-            //    return LolPlayerRepo.Read(id);
-            //else
-            //    throw new IndexOutOfRangeException("Id is to big!");
+            if (id < LolPlayerRepo.ReadAll().Count() + 1)
+                return LolPlayerRepo.Read(id);
+            else
+                throw new IndexOutOfRangeException("Id is to big!");
             return LolPlayerRepo.Read(id);
         }
 

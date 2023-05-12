@@ -58,7 +58,7 @@ namespace GBJ0CK_HFT_2021222.Endpoint.Cotrollers
             var lolteamToDelete = this.tl.Read(id);
             tl.Delete(id);
             this.hub.Clients.All.SendAsync("LolTeamDeleted", lolteamToDelete);
-            this.hub.Clients.All.SendAsync("LolTeamDeleted", null);
+            this.hub.Clients.All.SendAsync("LolPlayerDeleted", null);
         }
     }
 }

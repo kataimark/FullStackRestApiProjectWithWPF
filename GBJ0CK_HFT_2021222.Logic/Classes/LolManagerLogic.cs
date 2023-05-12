@@ -23,14 +23,14 @@ namespace GBJ0CK_HFT_2021222.Logic
 
         public void Create(LolManager obj)
         {
-            //if (obj.Name.Any(c => char.IsDigit(c)))
-            //{
-            //    throw new ArgumentException("Name can't contain numbers");
-            //}
-            //if (obj.Name == "")
-            //{
-            //    throw new ArgumentNullException("Name can't be null");
-            //}
+            if (obj.Name.Any(c => char.IsDigit(c)))
+            {
+                throw new ArgumentException("Name can't contain numbers");
+            }
+            if (obj.Name == "")
+            {
+                throw new ArgumentNullException("Name can't be null");
+            }
             LolManagerRepo.Create(obj);
         }
 
@@ -41,10 +41,10 @@ namespace GBJ0CK_HFT_2021222.Logic
 
         public LolManager Read(int id)
         {
-            //if (id < LolManagerRepo.ReadAll().Count() + 1)
-            //    return LolManagerRepo.Read(id);
-            //else
-            //    throw new IndexOutOfRangeException("Id is too big!");
+            if (id < LolManagerRepo.ReadAll().Count() + 1)
+                return LolManagerRepo.Read(id);
+            else
+                throw new IndexOutOfRangeException("Id is too big!");
             return LolManagerRepo.Read(id);
         }
 

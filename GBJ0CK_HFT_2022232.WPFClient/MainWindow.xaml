@@ -5,14 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GBJ0CK_HFT_2022232.WPFClient"
         mc:Ignorable="d"
-        Title="DatabaseEditor" Height="568" Width="800">
+        Title="DatabaseEditor" Height="792" Width="750">
     <Window.DataContext>
-        <local:MainWindowViewModel/>
+        <local:MainWindowViewModel></local:MainWindowViewModel>
     </Window.DataContext>
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*"></ColumnDefinition>
-            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="300*"/>
+            <ColumnDefinition Width="167*"/>
+            <ColumnDefinition Width="283*"/>
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Column="0">
             <ListBox Height="148" ScrollViewer.VerticalScrollBarVisibility="Visible" ItemsSource="{Binding LolManagers}" SelectedItem="{Binding SelectedLolManager}">
@@ -82,6 +83,61 @@
 
 
         </StackPanel>
+        <StackPanel Grid.Column="2">
+            <ListBox Height="101" ScrollViewer.VerticalScrollBarVisibility="Visible" ItemsSource="{Binding GetLolPlayerWhereMoreThan28Employees}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="{Binding Id}" ContentStringFormat="Id: {0}"></Label>
+                            <Label Content="{Binding Name}"></Label>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            <ListBox Height="101" ScrollViewer.VerticalScrollBarVisibility="Visible" ItemsSource="{Binding GetLolPlayerWhereLolTeamOwnerIsBengi}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="{Binding Id}" ContentStringFormat="Id: {0}"></Label>
+                            <Label Content="{Binding Name}"></Label>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            <ListBox Height="101" ScrollViewer.VerticalScrollBarVisibility="Visible" ItemsSource="{Binding GetLolManagerWhereLolPlayer18}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="{Binding Id}" ContentStringFormat="Id: {0}"></Label>
+                            <Label Content="{Binding Name}"></Label>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            <ListBox Height="101" ScrollViewer.VerticalScrollBarVisibility="Visible" ItemsSource="{Binding GetLolManagerWhereLolPlayerModelIsZeus}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="{Binding Id}" ContentStringFormat="Id: {0}"></Label>
+                            <Label Content="{Binding Name}"></Label>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            <ListBox Height="101" ScrollViewer.VerticalScrollBarVisibility="Visible" ItemsSource="{Binding GetLolManagerWherePriceIs100}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="{Binding Id}" ContentStringFormat="Id: {0}"></Label>
+                            <Label Content="{Binding Name}"></Label>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+
+        </StackPanel>
+        
+        
 
     </Grid>
 </Window>

@@ -19,14 +19,14 @@ namespace GBJ0CK_HFT_2021222.Logic
 
         public void Create(LolTeam obj)
         {
-            //if (obj.Name.Any(c => char.IsDigit(c)) || obj.Owner.Any(c => char.IsDigit(c)))
-            //{
-            //    throw new ArgumentException("Name and owner can't contain numbers");
-            //}
-            //if (obj.Name == "" || obj.Owner == "")
-            //{
-            //    throw new ArgumentNullException("Can't be null");
-            //}
+            if (obj.Name.Any(c => char.IsDigit(c)) || obj.Owner.Any(c => char.IsDigit(c)))
+            {
+                throw new ArgumentException("Name and owner can't contain numbers");
+            }
+            if (obj.Name == "" || obj.Owner == "")
+            {
+                throw new ArgumentNullException("Can't be null");
+            }
             LolTeamRepo.Create(obj);
         }
 
@@ -37,10 +37,10 @@ namespace GBJ0CK_HFT_2021222.Logic
 
         public LolTeam Read(int id)
         {
-            //if (id < LolTeamRepo.ReadAll().Count() + 1)
-            //    return LolTeamRepo.Read(id);
-            //else
-            //    throw new IndexOutOfRangeException("Id is too big!");
+            if (id < LolTeamRepo.ReadAll().Count() + 1)
+                return LolTeamRepo.Read(id);
+            else
+                throw new IndexOutOfRangeException("Id is too big!");
             return LolTeamRepo.Read(id);
         }
 

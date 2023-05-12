@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace GBJ0CK_HFT_2021222.Client
 {
-    class RestService
+    public class RestService
     {
         HttpClient client;
 
