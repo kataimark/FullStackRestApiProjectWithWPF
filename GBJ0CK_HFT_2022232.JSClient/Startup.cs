@@ -26,8 +26,9 @@ namespace GBJ0CK_HFT_2022232.JSClient
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseRouting();
             app.UseStaticFiles();
+
+            app.UseRouting();
 
             app.UseEndpoints(endpoints =>
             {

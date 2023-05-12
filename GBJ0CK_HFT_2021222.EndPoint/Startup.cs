@@ -47,7 +47,7 @@ namespace GBJ0CK_HFT_2021222.EndPoint
             .AllowCredentials()
             .AllowAnyMethod()
             .AllowAnyHeader()
-            .WithOrigins("http://localhost:58709"));
+            .WithOrigins("http://localhost:27630"));
 
             app.UseRouting();
 
