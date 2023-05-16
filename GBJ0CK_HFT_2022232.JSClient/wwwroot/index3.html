@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>LolPlayer UI</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <h1>LolManager Catalog</h1>
+
+    <div id="formdiv">
+
+        <label>Name</label>
+        <input type="text" id="name" />
+        <label>Age</label>
+        <input type="number" id="age" />
+        <label>Employees</label>
+        <input type="number" id="employeestoupdate" />
+        <button type="button" onclick="create()">Add LoLManager</button>
+
+    </div>
+
+    <div id="updateformdiv">
+
+        <label>Name</label>
+        <input type="text" id="nametoupdate" />
+        <label>Employees</label>
+        <input type="number" id="employeestoupdate" />
+        <button type="button" onclick="update()">Update LoLManager</button>
+    </div>
+
+    <h1>LolManager Catalog</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Employees</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="resultarea">
+        </tbody>
+    </table>
+
+    <button type="button" onclick="displayQueryResult1()">Display Query Result 1</button>
+    <div id="queryresult1"></div>
+
+    <button type="button" onclick="displayQueryResult2()">Display Query Result 2</button>
+    <div id="queryresult2"></div>
+
+    <button type="button" onclick="displayQueryResult3()">Display Query Result 3</button>
+    <div id="queryresult3"></div>
+
+    <button type="button" onclick="displayQueryResult4()">Display Query Result 4</button>
+    <div id="queryresult4"></div>
+
+    <button type="button" onclick="displayQueryResult5()">Display Query Result 5</button>
+    <div id="queryresult5"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/6.0.1/signalr.js"></script>
+    <script src="script3.js"></script>
+</body>
+</html>
